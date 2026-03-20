@@ -1,5 +1,7 @@
 # Disco
 
+![Disco Elysium banner](https://private-user-images.githubusercontent.com/4883432/567051845-42222267-de92-4e33-9a84-96c7497b232d.webp?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQwMzY1ODksIm5iZiI6MTc3NDAzNjI4OSwicGF0aCI6Ii80ODgzNDMyLzU2NzA1MTg0NS00MjIyMjI2Ny1kZTkyLTRlMzMtOWE4NC05NmM3NDk3YjIzMmQud2VicD9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzIwVDE5NTEyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5NjhiM2VhMmM5YTA5YTIxMzg1M2M5ODA2ZDlkMWNhNGVkZjliMTVjY2JiZDhhYjBjZDhkMjRmYTY4ZDYzZmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ACEupEJ05_p_C2BwKttzOAXkXoVcjqgEiqQMXZfODMw)
+
 ## THE RADIO CRACKLES TO LIFE...
 
 Disco is a daemon-first CLI that reviews Go diffs against a style guide.
@@ -24,7 +26,7 @@ make install
 
 - Go toolchain matching `go.mod` (`go 1.26.0`)
 - Mistral API key if you don't want to use Kronk all the way
-- ![This Playlist](https://open.spotify.com/playlist/5M37hQWaY1WN7E99zrve8g?si=f0731ed9d31b4363)
+- [This Playlist](https://open.spotify.com/playlist/5M37hQWaY1WN7E99zrve8g?si=f0731ed9d31b4363)
 
 ### Envars
 
