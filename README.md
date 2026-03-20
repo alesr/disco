@@ -43,7 +43,7 @@ make install
 ```
 - EMBEDDING_PROVIDER=kronk 
 - GENERATION_PROVIDER=mistral
-- MISTRAL_API_KEY=... (required)
+- MISTRAL_API_KEY=...
 - MISTRAL_MODEL=mistral-small-latest (set as default in the code, but you can overide here)
 - MISTRAL_BASE_URL=https://api.mistral.ai (default exists)
 ```
