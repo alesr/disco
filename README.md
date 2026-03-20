@@ -24,7 +24,7 @@ make install
 
 - Go toolchain matching `go.mod` (`go 1.26.0`)
 - Mistral API key if you don't want to use Kronk all the way
-- [![This Playlist](assets/revachol-radio.jpg)](https://open.spotify.com/playlist/5M37hQWaY1WN7E99zrve8g?si=f0731ed9d31b4363)
+- ![This Playlist](https://open.spotify.com/playlist/5M37hQWaY1WN7E99zrve8g?si=f0731ed9d31b4363)
 
 ### Envars
 
