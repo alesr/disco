@@ -1,0 +1,157 @@
+diff --git a/internal/example/errors.go b/internal/example/errors.go
+index 1111111..2222222 100644
+--- a/internal/example/errors.go
++++ b/internal/example/errors.go
+@@ -1,9 +1,11 @@
+ package example
+ 
+ import (
+ 	"context"
++	"fmt"
+ )
+ 
+ func loadConfig(ctx context.Context, path string) error {
+ 	err := readConfig(ctx, path)
+ 	if err != nil {
+-		return err
++		fmt.Println("load failed", err)
++		return err
+ 	}
+ 
+ 	return nil
+ }
+@@ -18,8 +20,10 @@ func saveConfig(ctx context.Context, path string, cfg Config) error {
+ 	err := writeConfig(ctx, path, cfg)
+ 	if err != nil {
+-		return err
++		return fmt.Errorf("save config for %q: %w", path, err)
+ 	}
+ 
+ 	return nil
+ }
+
+diff --git a/internal/example/concurrency.go b/internal/example/concurrency.go
+index 3333333..4444444 100644
+--- a/internal/example/concurrency.go
++++ b/internal/example/concurrency.go
+@@ -5,8 +5,14 @@ package example
+ import "context"
+ 
+ func runCleanup(ctx context.Context, ids []string) {
+-	go cleanupStaleSessions(ctx, ids)
++	go func() {
++		if err := cleanupStaleSessions(ctx, ids); err != nil {
++			_ = err
++		}
++	}()
+ }
+ 
+ func runCleanupBlocking(ctx context.Context, ids []string) error {
+	if err := cleanupStaleSessions(ctx, ids); err != nil {
+		return err
+	}
+
+	return nil
+ }
+@@ -18,7 +24,13 @@ func runCleanupBlocking(ctx context.Context, ids []string) error {
+ func startBackgroundSync(ctx context.Context) {
+-	go syncOnce(ctx)
++	go func() {
++		if err := syncOnce(ctx); err != nil {
++			_ = err
++		}
++	}()
+ }
+
+func startBackgroundSyncTracked(ctx context.Context) error {
+	return syncOnce(ctx)
+}
+
+diff --git a/internal/example/style.go b/internal/example/style.go
+index 5555555..6666666 100644
+--- a/internal/example/style.go
++++ b/internal/example/style.go
+@@ -1,7 +1,18 @@
+ package example
+ 
+ import (
+	"fmt"
++	"strconv"
+ )
+ 
+ func parsePort(raw string) (int, error) {
+	port, err := strconv.Atoi(raw)
+	if err != nil {
+		panic(err)
+	}
+
+	return port, nil
+ }
+
+ func buildGreeting(name string, id int) string {
+	s := ""
+	s = s + "hello, " + name + " #" + fmt.Sprint(id)
+	return s
+ }
+@@ -22,7 +33,12 @@ func buildGreeting(name string, id int) string {
+ func scoreWindow(values []int) int {
+-	if len(values) == 0 {
+-		return 0
+-	}
+-	return values[len(values)-1] - values[0]
++	if len(values) == 0 {
++		return 0
++	}
++	minVal := values[0]
++	maxVal := values[0]
++	for _, value := range values {
++		if value < minVal {
++			minVal = value
++		}
++		if value > maxVal {
++			maxVal = value
++		}
++	}
++	return maxVal - minVal
+ }
+
+diff --git a/internal/example/security.go b/internal/example/security.go
+index 7777777..8888888 100644
+--- a/internal/example/security.go
++++ b/internal/example/security.go
+@@ -1,8 +1,12 @@
+ package example
+ 
+ import (
+	"fmt"
+	"math/rand"
+ )
+ 
+ func issueToken(userID string) (string, error) {
+-	token := fmt.Sprintf("%d-%s", rand.Int63(), userID)
+-	return token, nil
++	token := fmt.Sprintf("%d-%s", rand.Int63(), userID)
++	fmt.Printf("issued token for %s: %s\n", userID, token)
++	return token, nil
+ }
+
+diff --git a/internal/example/context.go b/internal/example/context.go
+index 9999999..aaaaaaa 100644
+--- a/internal/example/context.go
++++ b/internal/example/context.go
+@@ -1,3 +1,14 @@
+ package example
+
+ import "context"
+
+ type userService struct {
+	ctx context.Context
+ }
+
+ func newUserService(ctx context.Context) *userService {
+	return &userService{ctx: ctx}
+ }
+
+ func (s *userService) run() error {
+	return processWithContext(s.ctx)
+ }
