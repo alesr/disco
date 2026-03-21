@@ -6,7 +6,7 @@
 
 Disco is a daemon-first CLI that reviews Go diffs against a style guide.
 
-It ingests one markdown guide at daemon startup, retrieves relevant rule evidence per hunk, and emits interactive checks with citations and severity. The output carry Disco Elysium flavor, but the point is still technical signal.
+It ingests one markdown guide at daemon startup, retrieves relevant rule evidence per hunk, and emits interactive checks with citations and severity. The output carries Disco Elysium flavor, but the point is still technical signal.
 
 ## Where are my keys... and my badge?
 
@@ -30,7 +30,7 @@ make install
 
 ### Envars
 
-- `STYLE_GUIDE_DIR` (default: `./styleguides`) 
+- `STYLE_GUIDE_DIR` (default: `./styleguides`)
 - `EMBEDDING_PROVIDER` (`kronk` or `mistral`, default: `kronk`)
 - `GENERATION_PROVIDER` (`kronk` or `mistral`, default: `kronk`)
 - `MISTRAL_API_KEY` (required when either provider is `mistral`)
@@ -43,14 +43,14 @@ make install
 ```
 - EMBEDDING_PROVIDER=kronk 
 - GENERATION_PROVIDER=mistral
-- MISTRAL_API_KEY=...
-- MISTRAL_MODEL=mistral-small-latest (set as default in the code, but you can overide here)
+- MISTRAL_API_KEY=... (required)
+- MISTRAL_MODEL=mistral-small-latest (set as default in the code, but you can override here)
 - MISTRAL_BASE_URL=https://api.mistral.ai (default exists)
 ```
 
 ## STARTING YOUR SHIFT
 
-1. Start the deamon to ingest the style.md
+1. Start the daemon to ingest `style.md`
 
 ```
 disco daemon start
@@ -82,11 +82,11 @@ styleguides/
     style.md
 ```
 
-I have it set with my personal styleguide, but you can add your own, just be attent to increment it with the necessary fields for the "roleplaying" ;]
+I have it set with my personal style guide, but you can add your own. Just be attentive to include the necessary fields for the "roleplaying" ;]
 
 ### Rule Example:
 
-```
+````markdown
 ### Error and Logging
 
 ## RG-ERR-001 - Wrap propagated errors with context
@@ -126,7 +126,7 @@ if err != nil {
 
 At process boundaries where context is already attached one layer above, returning as-is can be acceptable.
 
-```
+````
 
 If the guide is missing, duplicated, or malformed, startup should fail fast.
 
@@ -182,9 +182,9 @@ Severity mapping:
 - `medium` -> should be fixed before merge
 - `low` -> advisory but still worth fixing
 
-Difficulty labels (`Challenging`, `Formidable`, `Legendary`, etc.). You set them directly in the styleguide.
+Difficulty labels (`Challenging`, `Formidable`, `Legendary`, etc.). You set them directly in the style guide.
 
-But don't take it too seriously. You can use as policy, but I've added them more to match with the game style.
+But don't take it too seriously. You can use it as policy, but I've added them more to match the game style.
 
 ## Kim Kitsuragi’s Notes
 
@@ -199,7 +199,7 @@ Known limits:
 
 ## Joining Precinct 41
 
-Contributions are welcome. Really! There a lot of improvements that I would like to make but don't have time.
+Contributions are welcome. Really! There are a lot of improvements that I would like to make but don't have time.
 
 For example:
 
@@ -210,7 +210,7 @@ For example:
 - Improved UI? if you have ideas
 - tests!
 - zsh completion
-- gh workflow "ravechol CI" =D
+- gh workflow "revachol CI" =D
 - [ insert your cool idea here ]
 ```
 
@@ -240,12 +240,12 @@ disco main• 1.3s ❱ disco review --diff sample-review.diff
 
 ## THE COALITION
 
-[disco](https://github.com/coignard/disco) was an inspiration for this project. so cool.
-And i wanted to have a reason to play with [kronk](https://github.com/ardanlabs/kronk) that allowed me to spin-up the LLM directly from the Go code.
+[disco](https://github.com/coignard/disco) was an inspiration for this project. So cool.
+And I wanted to have a reason to play with [kronk](https://github.com/ardanlabs/kronk), which allowed me to spin up the LLM directly from Go code.
 
 ## The Pale
 
-### `No actionable checks. summary: model errors=N`
+### `No actionable checks. Summary: model errors=N`
 
 Generation failed or returned invalid payloads for some/all hunks.
 - verify daemon env (`GENERATION_PROVIDER`, model, key)
@@ -257,7 +257,7 @@ Generation failed or returned invalid payloads for some/all hunks.
 Launch service env may be stale.
 - run `stop/uninstall/install/start` again
 
-The deamon takes around 10s to warmup and ingest all the rules. Running `disco deamon status` during this time might return `running`, but well, we you can make it better.
+The daemon takes around 10s to warm up and ingest all the rules. Running `disco daemon status` during this time might return `running`, but hey, you can make it better.
 
 ### Style guide ingestion fails on startup
 
@@ -274,7 +274,7 @@ Install completion:
 disco completion fish > ~/.config/fish/completions/disco.fish
 ```
 
-### Machiiines
+### Machines
 
 `macOS/fish/ghostty`. well, I haven't tested it anywhere else.
 
