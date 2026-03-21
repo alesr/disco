@@ -6,9 +6,11 @@
 
 ## THE RADIO CRACKLES TO LIFE...
 
-Disco is a daemon-first CLI that reviews Go diffs against a style guide.
+**disco** is a **daemon-first** Go CLI.
 
-It ingests one markdown guide at daemon startup, retrieves relevant rule evidence per hunk, and emits interactive checks with citations and severity. The output carries Disco Elysium flavor, but the point is still technical signal.
+A long-running background daemon handles rule ingestion, builds a persistent vector store, and performs RAG-powered code reviews. The lightweight CLI client simply sends git diffs to the daemon and displays the results — making every subsequent review extremely fast.
+
+It currently supports running **everything locally** using **Kronk** (for both embeddings and generation), as well as hybrid setups with **Mistral** (and more providers planned in the future).
 
 ## Where are my keys... and my badge?
 
