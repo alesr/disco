@@ -1,6 +1,8 @@
 # Disco
 
-<image-card alt="Disco Elysium banner" src="https://private-user-images.githubusercontent.com/4883432/567051845-42222267-de92-4e33-9a84-96c7497b232d.webp?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQwMzY1ODksIm5iZiI6MTc3NDAzNjI4OSwicGF0aCI6Ii80ODgzNDMyLzU2NzA1MTg0NS00MjIyMjI2Ny1kZTkyLTRlMzMtOWE4NC05NmM3NDk3YjIzMmQud2VicD9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzIwVDE5NTEyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5NjhiM2VhMmM5YTA5YTIxMzg1M2M5ODA2ZDlkMWNhNGVkZjliMTVjY2JiZDhhYjBjZDhkMjRmYTY4ZDYzZmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ACEupEJ05_p_C2BwKttzOAXkXoVcjqgEiqQMXZfODMw" ></image-card>
+<p align="center">
+  <img src="docs/images/disco-banner.webp" alt="Disco Elysium banner" width="920" />
+</p>
 
 ## THE RADIO CRACKLES TO LIFE...
 
@@ -64,7 +66,9 @@ disco review --diff sample-review.diff
 
 ### Example output
 
-![sample_output](https://private-user-images.githubusercontent.com/4883432/567048146-3c9c3367-afe8-42d3-ac33-2ad2beaabe77.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQwMzYwMTAsIm5iZiI6MTc3NDAzNTcxMCwicGF0aCI6Ii80ODgzNDMyLzU2NzA0ODE0Ni0zYzljMzM2Ny1hZmU4LTQyZDMtYWMzMy0yYWQyYmVhYWJlNzcucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDMyMCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAzMjBUMTk0MTUwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MDFkNThjNDM3YTEzODhlNjEwNGFjZjVlZTkzNzRkNDgxZTM4NzMxNmEzNGUxOWI4NTgzNDk2ZTQxZjVmNmZmYiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.IuDde2ydadnnKrQxisK8IYRTJSi_BJ57TyZtQT_fRpA)
+<p align="center">
+  <img src="docs/images/sample-output.png" alt="sample_output" width="920" />
+</p>
 
 ## The Thought Cabinet
 
